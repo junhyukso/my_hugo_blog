@@ -8,7 +8,7 @@ tags:
 - HUGO
 ---
 
-# HUGO
+## HUGO
 
 HUGO는 GO언어로 작성된 정적 사이트 생성기 입니다.
 
@@ -24,11 +24,11 @@ HUGO는 GO언어로 작성된 정적 사이트 생성기 입니다.
 - **커뮤니티가 대부분 영어**
     - Hexo같은 경우는 대부분 중국 커뮤니티입니다.
 - **빠름**
-    - HUGO는 가장 빠른 정적 프레임워크 생성기로도 유명합니다.
+    - HUGO는 가장 빠른 정적 사이트 생성기로도 유명합니다.
 - **테마 관리가 깔끔함**
     - HUGO는 Look Up Order라는것이 있어, 내부 테마를 전혀 수정하지 않고도 커스텀이 가능합니다.
 
-# HUGO 설치
+## HUGO 설치
 
 - **Windows10 기준** 입니다.
 - 공식 설치방법은 해당 문서를 참조바랍니다.([https://gohugo.io/getting-started/installing](https://gohugo.io/getting-started/installing))
@@ -62,7 +62,7 @@ choco install hugo -confirm
 
 - `hugo version` 을 입력하여 설치가 정상적으로 완료되었는지 확인합니다.
 
-# HUGO 사이트 만들기
+## HUGO 사이트 만들기
 
 ```powershell
 hugo new site [SITE_NAME]
@@ -70,7 +70,7 @@ hugo new site [SITE_NAME]
 
 - [SITE_NAME]이 만들어질 사이트의 이름입니다. 원하시는걸로 입력하세요
 
-# HUGO 테마 추가하기
+## HUGO 테마 추가하기
 
 - [https://themes.gohugo.io/](https://themes.gohugo.io/)
 - 위 주소로 가시면 여러가지 테마가 있습니다.
@@ -83,14 +83,14 @@ Theme 설치 구조 예시 (ananke)
 - 이후, config.toml에 테마를 지정합니다.
     - theme = "테마이름"
 
-# HUGO 글 작성하기
+## HUGO 글 작성하기
 
 ```powershell
 hugo new posts/[파일이름.md]
 ```
 content/post 폴더에 해당 파일이 생성됩니다.
 
-# HUGO 서버 실행하기
+## HUGO 서버 실행하기
 
 - 로컬에서 간단하게 웹서버를 돌려보는 용도입니다.
 
@@ -98,7 +98,7 @@ content/post 폴더에 해당 파일이 생성됩니다.
 hugo server -D
 ```
 
-# 정적 블로그 생성
+## 정적 사이트 생성
 
 프로젝트 폴더에서,
 

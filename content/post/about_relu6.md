@@ -80,7 +80,7 @@ x = layers.ReLU(6., name='Conv1_relu')(x)
 ... 
 ```
 
-# References
+## References
 
 [1]Sandler, Mark, et al. "Mobilenetv2: Inverted residuals and linear bottlenecks." Proceedings of the IEEE conference on computer vision and pattern recognition. 2018.
 
