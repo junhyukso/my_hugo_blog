@@ -1,6 +1,7 @@
 +++
 title = "About"
 date = "2020-11-20"
+notoc = true
 +++
 
 ## Interest in ...
