@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://junhyukso.github.io"
 languageCode = "ko-kr"
 defaultContentLanguage = "ko"
 theme = "hello-friend"
