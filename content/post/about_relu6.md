@@ -3,8 +3,6 @@ title: ReLU6 알아보기
 date: 2020-10-14
 description : ReLU의 변형 중 하나인 ReLU6 에 대해서 알아보겠습니다.
 cover : https://user-images.githubusercontent.com/41286195/95899022-ddc28600-0dca-11eb-8659-61f0fb31ab28.png
-categories :
-- a
 tags:
 - DeepLearning
 - Activation

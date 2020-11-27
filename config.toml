@@ -3,7 +3,6 @@ languageCode = "ko-kr"
 defaultContentLanguage = "ko"
 theme = "hello-friend"
 paginate = 5
-lastModDisplay = "Modified:"
 
 [sitemap]
   changefreq = "monthly"
@@ -19,6 +18,8 @@ lastModDisplay = "Modified:"
   showMenuItems = 5
   # Enable to show reading time in minutes for posts
   showReadingTime = true
+  lastModDisplay = "Modified:"
+
 
 [languages]
   [languages.ko]
