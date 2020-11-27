@@ -27,6 +27,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           external_repository: junhyukso/junhyukso.github.io
-          actions_deploy_key: ${{ secrets.DEPLOY_KEY }}
+          deploy_key: ${{ secrets.DEPLOY_KEY }}
           publish_branch: main
           publish_dir: ./public
