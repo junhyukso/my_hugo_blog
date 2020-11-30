@@ -1,11 +1,12 @@
 ---
-title: Lottery Ticket Hypothesis
+title: "[REVIEW]Lottery Ticket Hypothesis"
 date: 2020-10-19
 description : Lottery Ticket Hyphothesis에 대해 알아봅시다.
 cover : https://user-images.githubusercontent.com/41286195/96431539-9dd22780-123e-11eb-8a54-e9bcc60f93d2.png
 tags:
 - Review
 - DeepLearning
+- Efficient DL
 - Pruning
 ---
 
