@@ -3,6 +3,10 @@ title: "[TF2.0]keras Layer Wrapping 하기"
 date: 2020-12-01T21:31:40+09:00
 description: TF2 keras에서 모델의 Layer들에 Wrapper를 씌우는법을 알아봅시다.
 cover : /img/post/tf_keras_layer_wrapper/cover.png
+tags :
+- DeepLearning
+- Tensorflow
+- Keras
 ---
 실험을 위해서, 이미 존재하는 keras모델의 특정레이어들에서, Input/Output Tensor들에 약간의 조작이 필요한일이 생겼습니다. 따라서 Layer를 특정 Wrapper로 감싸려고 하였는데요,
 
