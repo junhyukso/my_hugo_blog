@@ -40,7 +40,6 @@ notoc = true
 
 ## Teaching Exprience
 - Making Cross-Platform app with React Native. at QUIPU(서울시립대학교 컴퓨터 중앙 학술동아리) (2019.03~ 2019.06)
-- Deep learning basics with Tensorflow2. at QUIPU(서울시립대학교 컴퓨터 중앙 학술동아리). (2020.12 ~ 2021.03)
 
 ## Skills
 - Deep Learning
