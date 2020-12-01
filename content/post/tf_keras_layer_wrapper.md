@@ -2,6 +2,7 @@
 title: "[TF2.0]keras Layer Wrapping 하기"
 date: 2020-12-01T21:31:40+09:00
 description: TF2 keras에서 모델의 Layer들에 Wrapper를 씌우는법을 알아봅시다.
+cover : /img/post/tf_keras_layer_wrapper/cover.png
 ---
 실험을 위해서, 이미 존재하는 keras모델의 특정레이어들에서, Input/Output Tensor들에 약간의 조작이 필요한일이 생겼습니다. 따라서 Layer를 특정 Wrapper로 감싸려고 하였는데요,
 
@@ -35,8 +36,7 @@ elif is_sequential_or_functional:
 핵심은 이부분인데, 보시게 되면
 keras.models.clone_model의 clone_function인자를 사용하여 Wrapper function을 주고 있습니다.
 
-wrapper function으로 PruneLowMagnitude란 클래스에 레이어를 인자로 주고 있는데, 이 클래스를 보게 
-
+wrapper function으로 PruneLowMagnitude란 클래스에 레이어를 인자로 주고 있는데, 이 클래스를 보게 되면 다음과 같습니다.
 ### Class:PruneLowMagnitude(keras.layers.Wrapper)
 
 [소스코드](https://github.com/tensorflow/model-optimization/blob/e8e5266b96498fe6b1807665ce26ca8f0213b2f0/tensorflow_model_optimization/python/core/sparsity/keras/pruning_wrapper.py)
@@ -131,7 +131,7 @@ class PruneLowMagnitude(Wrapper):
 
 이 클래스는[keras.layers.Wrapper](https://www.tensorflow.org/api_docs/python/tf/keras/layers/Wrapper)란 Abstract Class를 Implement 하고 있습니다.
 
-이 Abstract class는 [이 소스코드](https://github.com/tensorflow/tensorflow/blob/v2.3.1/tensorflow/python/keras/layers/wrappers.py#L40-L81) 에서 확인할 수 있는데, 큰 내용이 있진 않습니다. 한번 확인해보세요.
+이 Abstract class는 [이 소스코드](https://github.com/tensorflow/tensorflow/blob/v2.3.1/tensorflow/python/keras/layers/wrappers.py#L40-L81) 에서 확인할 수 있는데, 큰 내용이 있진 않습니다.
 
 ```python
 class Wrapper(Layer):
@@ -246,7 +246,7 @@ def build(self, input_shape):
         trainable=False)
 ```
 
-`super(PruneLowMagnitude, self).build(input_shape)` 로 원래 layur의 build를 호출해주고,
+`super(PruneLowMagnitude, self).build(input_shape)` 로 원래 layer의 build를 호출해주고,
 
 Wrapper에서 따로 필요한 Variables를 할당하는것으로 충분해보입니다.
 
@@ -324,8 +324,8 @@ class MyWrapper(keras.Wrapper):
 		"""DO SOMETHING WHEN CALLING"""
 
 		if 'training' in args:
-      return self.layer.call(inputs, training=training)
-    return self.layer.call(inputs)
+            return self.layer.call(inputs, training=training)
+        return self.layer.call(inputs)
 
 def _wrapper_func(layer):
 	if layer is some_condition :
