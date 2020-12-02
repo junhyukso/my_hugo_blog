@@ -3,6 +3,8 @@ title: "Dynamic Time Warping"
 date: 2020-12-03T03:33:31+09:00
 description: 패턴매칭에 자주 사용되는 알고리즘인 DTW에 대해 알아봅시다.
 cover : /img/post/DTW/cover.png
+- Algorithm
+- Patter Recognition
 ---
 Dynamic Time Warping
 ## Purpose
