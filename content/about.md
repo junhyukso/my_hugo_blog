@@ -22,7 +22,7 @@ notoc = true
 - University of Seoul , Dept. of Electrical and Computer Engineering.(2018.03~)
 
 ## Publications
-- 김도희, 이상헌, **소준혁**, 정세환 "CCTV 영상에서 얼굴인식과 사람 재식별을 이용한 확진자 고속 검색 시스템(Fast Confirmed Case Search System using Face Recognition and Person Re-identification in CCTV Video)",한국정보과학회 Korea Software Congress (KSC), Dec. 2020
+- 김도희, 이상헌,정세환,**소준혁**,이영민  "CCTV 영상에서 얼굴인식과 사람 재식별을 이용한 확진자 고속 검색 시스템(Fast Confirmed Case Search System using Face Recognition and Person Re-identification in CCTV Video)",한국정보과학회 Korea Software Congress (KSC), Dec. 2020
 
 
 ## Research
