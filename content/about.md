@@ -58,5 +58,5 @@ notoc = true
 - blog : https://junhyukso.github.io
 
 ## Email
-junhyukso@uos.ac.kr  
+junhyuk@uos.ac.kr  
 goqhadl9298@gmail.com
