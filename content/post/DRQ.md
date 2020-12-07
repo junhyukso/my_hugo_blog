@@ -6,7 +6,7 @@ date: 2020-12-01T01:56:20+09:00
 tags :
 - Review
 - DeepLearning
-- Efficient DL
+- EfficientAI
 - Quantization
 ---
 DRQ: Dynamic Region-based Quantization for
