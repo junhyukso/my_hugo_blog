@@ -44,6 +44,8 @@ P(x)가 각 클래스의 출력확률, 즉 Softmax레이어의 아웃풋입니�
 {{< figure src="/img/post/deebert/fig3.png" position="center">}}
 **DistillBERT**에 비해, **Accuracy-Time Tradeoff 가 더 Optimal**함을 확인할 수 있습니다.
 
+결론적으로, BERT에도 충분히 EarlyExit 이 적용될 수 있다는 가능성을 보여준 Contribution입니다.
+
 감사합니다.
 
 ## Reference
