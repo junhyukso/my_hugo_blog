@@ -6,7 +6,7 @@ cover : https://user-images.githubusercontent.com/41286195/96431539-9dd22780-123
 tags:
 - Review
 - DeepLearning
-- Efficient DL
+- EfficientAI
 - Pruning
 ---
 
