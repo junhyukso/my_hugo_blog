@@ -39,27 +39,29 @@ Input Featrue Map을 세 그룹으로 나눕니다. 나누는 기준은 Input의
 - FFT는 큰 노이즈를 허용함.
 - Imagenet이 Cifar10보다 좀 더 Noise에 민감.  
 
-Input들이 Value에 따라 확연히 다른 Impact를 가짐을 알수있습니다.    
-즉, Sensitive Value는 존재합니다.
+즉, Input의 **Magintude가 클수록 Sensitive** 함을 확인할 수 있습니다.
+
 ### Sensitive Region
 ![Sensitive Region](/img/post/DRQ/sensitivity_region.png)
 그렇다면 이러한 Sensitive Value들의 분포는 어떻게 될까요?  
 저자들은 이를 우선 Visualize 하기 위해, LeNet5에 MNIST데이터셋에 대해 실험을 수행했습니다.  
 위 그림은 LeNet5에 3이란 이미지를 넣었을때, 처음 3 레이어를 나타낸 그림입니다.  
 
-결과적으로, Magnitude가 큰 Group(Segment 0)은 무작위적으로 분포하지 않고, 집합하는 경향이 있음을 알 수 있습니다. Segment 2는 중요하지 않은 부분에 넓게 분포함을 확인할 수 있습니다.  
+결과적으로, Magnitude가 큰 Group(Segment 0)은 무작위적으로 분포하지 않고, **집합하는 경향**이 있음을 알 수 있습니다. Segment 2는 중요하지 않은 부분에 넓게 분포함을 확인할 수 있습니다.  
 
 그렇다면, 이러한 Input Feature Map의 h*w를 x*y개의 Patch로 나눠서 , Sensitive/ Insensitive한 Patch로 나눌 수 있을 것입니다. 이를 In/Sensitive Region 라고 부릅니다.  
-그렇다면, 이러한 Sensitive Region의 판단기준은 어떻게 되야할까요?  
+
 ## Sensitive Region 찾기 알고리즘
 우선 DRQ Algorithm의 Overview를 잠깐 집고 넘어갑시다.  
 ### Algorithm Overview
 ![DRQ Overview](/img/post/DRQ/DRQ_algo_overview.png)
 
-1. Sensitive Region Predictor
+1. Sensitive Region Predictor  
+  
 Sensitive Region Predictor는 Runtime에, Input Feature Map의 각 Region들이 Sensitive한지 판단하는 역할을 합니다.
 
 - h*w사이즈의 Input Feature Map을 받아서, 우선 FP32→INT8로 Quantize 합니다.
+    - Int8이 기본 Precision 입니다.
 - IFM을 x*y 개의 region으로 분할합니다.
 - 각각의 Region을 Mean Filtering 합니다
 - 이를 **Predifiend Threshold Activation에 통과 시킵니다.**
@@ -86,8 +88,8 @@ Region이 작을 수록 세세한 Input Region을 보는것이므로 정확도�
 - 또한, 이러한 Mixed Precision Convolution을 진행하게되면 Weight가 원래 사용하던 Input이 아니므로 Acc drop이 클 것입니다.  
 
 저자들은 이를 해결하기위해 간단한 Finetuning 방법을 제시합니다.  
-- 우선 Input Feature Map의 분포,쉐잎을 뽑습니다.
-- Threshold와 Region Size를 적당히 큰값으로 잡습니다.
+
+- Threshold와 Region Size를 우선 적당히 큰값으로 잡습니다.
 - 이러한 Threshold와 Region Size를 적용한 Forward Pass를 Mixed Precision으로 수행합니다.
 - 단, Backward Pass는 Full Precision으로 진행합니다.
 - 이를 정확도가 수렴할때까지 진행합니다.
@@ -103,16 +105,16 @@ Region이 작을 수록 세세한 Input Region을 보는것이므로 정확도�
 
 ## Experimental Results
 
-Accuracy
+### Accuracy
 
 ![result acc](/img/post/DRQ/result_acc.png)
 
-Performance
+### Performance
 
 ![result time](/img/post/DRQ/result_time.png)
 
-Energy Consumption
+### Energy Consumption
 
 ![result Energy](/img/post/DRQ/result_power.png)
 
-가장 빠르고, 저전력이면서도 정확도가 기존 방법들에 비해 떨어지지 않음을 확인할 수 있습니다.
+실험결과 가장 빠르고, 저전력이면서도 정확도가 기존 방법들에 비해 떨어지지 않음을 확인할 수 있습니다.

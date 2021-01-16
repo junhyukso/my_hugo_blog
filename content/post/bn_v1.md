@@ -94,7 +94,7 @@ Inference mode에서는 이러한 방식을 통해,
 
 이미 **고정된 값만을 사용하여 진행하기 때문에, O(1)로 계산이 가능합니다.**
 
-## Batch Normalization Fusing
+## Batch Normalization Folding
 
 CNN모델에서 BN레이어는 보통,
 
@@ -111,19 +111,15 @@ CNN모델에서 BN레이어는 보통,
 
 와 같이 단순화 시킬 수 있습니다.
 
-따라서 실제 추론기 구현시, Batch Normalization레이어를 구성하지 않더라도,
+따라서 실제 추론기 구현시, Batch Normalization레이어를 구성하지 않더라도,**Convolution 레이어의 Weight ,bias를 조작하여 똑같은 계산 결과가 나오게 두 오퍼레이션을 합칠(Fusing)수 있습니다**. 
 
-**Convolution 레이어의 Weight ,bias를 조작하여 똑같은 계산 결과가 나오게 두 오퍼레이션을 합칠(Fusing)수 있습니다**. 
+이러한 최적화 방식을 BN Folding(or Fusing)라고 부릅니다.
 
-이러한 최적화 방식을 BN Fusing이라고 부릅니다.
-
-**Inference Mode**에서의 **BN은 O(1)**이므로, 상당히 **Memory Bound되는 연산**입니다.
-
-**BN Fusing**을 하게 되면, Conv이후 BN레이어를 수행하기 위해 **RAM에 중간 Activation을 저장해야 할 필요가 없습니다.** 
+**Inference Mode**에서의 **BN은 O(1)**이므로, 상당히 **Memory Bound되는 연산**입니다.**BN Fusing**을 하게 되면, Conv이후 BN레이어를 수행하기 위해 **RAM에 중간 Activation을 저장해야 할 필요가 없습니다.** 
 
 따라서 **램의 Bandwidth를 아껴 추론시 상당한 수행시간의 이득을 볼 수 있는 효과**가 있습니다.
 
-실제 프레임워크에서들에서는 CBR을 Fusing하는 최적화를 내부적으로 모두 진행하고 있습니다.
+실제 프레임워크에서들에서는 CBR을 Folding하는 최적화를 내부적으로 모두 진행하고 있습니다.
 
 ## Batch Renormalization
 

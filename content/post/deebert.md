@@ -13,6 +13,7 @@ tags :
 ## Intro
 - Bert는 **무겁습니다.**
 - 따라서 **Computation**을 줄이려는 많은 노력들이 있습니다.
+    - Transformer의 계산복잡도 자체를 줄이려는 방법.
     - **Pruning**을 하여 Sparse 하게 만드는 방법. (Sparse Transformer)
     - **Knowledge Distillation**을 하여 모델 사이즈 자체를 줄이는 방법.(DistillBERT)
     - 등등..
