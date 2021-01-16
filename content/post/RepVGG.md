@@ -21,9 +21,9 @@ RepVGG는 이러한 기법들 없이(정확히는 Inference 시만), **오직 3x
 
 VGG와 같은 단순한 ConvNet구조는 **Training시 Gradient Vanishing이라던가 하는 문제로 성능이 좋지 않다는 문제**가 있습니다. 따라서 ResNet처럼 Residual Branch를 만들어, Gradient를 더 잘 흐르게 하여 성능향상을 이뤄내는 경우가 많아졌습니다.
 
-RepVGG는 여기서 영감을 받아, **Training** 시에는 1x1Conv와 Identitiy로 이루어진 **Residual branch**를 사용하고, **Inference** 시에는 이를 Re-Parameterization기법으로 **하나의 3x3Conv**로 합치는 기법을 제시하였습니다.
+RepVGG는 여기서 영감을 받아, **Training** 시에는 1x1Conv와 Identitiy로 이루어진 **Residual branch**를 사용하고, **Inference** 시에는 이를 reparameterization기법으로 **하나의 3x3Conv**로 합치는 기법을 제시하였습니다.
 
-## Re-Parametriazation
+## Reparameterization
 
 ![fig3](/img/post/RepVGG/fig3.png)
 
@@ -56,7 +56,7 @@ RepVGG에서는 각 3x3Conv옆에, 1x1Conv와 Identity branch를 추가했습니
 
 ![fig4](/img/post/RepVGG/fig4.png)
 
- **Reparametrization 기법**을 통해,**VGG Style CNN을 유지**하면서  SOTA는 아니지만 **정확도와 속도향상을 모두 이뤄냈다는 점**에서 흥미로운 논문이였던 것 같습니다.
+ **Reparameterization기법**을 통해,**VGG Style CNN을 유지**하면서  SOTA는 아니지만 **정확도와 속도향상을 모두 이뤄냈다는 점**에서 흥미로운 논문이였던 것 같습니다.
 
 감사합니다.
 
