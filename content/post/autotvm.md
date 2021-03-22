@@ -1,6 +1,6 @@
 ---
 title: "[Review] Learning to Optimize Tensor Program"
-date: 2021-03-23
+date: 2021-03-23T00:43:37+09:00
 description : TVM의 머신러닝 기반 오토튜너인 AutoTVM에 대해 알아봅시다.
 cover : /img/post/autotvm/overview.png
 tags:
